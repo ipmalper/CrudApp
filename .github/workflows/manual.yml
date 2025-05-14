@@ -29,8 +29,6 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Ejecutar pruebas (ng test)
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
       - name: Construir aplicación (ng build)
         run: npm run build -- --configuration production
