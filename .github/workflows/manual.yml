@@ -4,23 +4,33 @@ name: CI/CD frontend
 
 
 on:
-  
-    push: 
-      branches: [ "main"]
-      
-      
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  CI:
-
+  build-frontend:
     runs-on: ubuntu-latest
 
-   
+    defaults:
+      run:
+        working-directory: ./frontend
+
     steps:
-    - uses: actions/checkout@v4.2.2
-    - name: Verificar estructura
-      run: |
-        echo "Estructura del repositorio:"
-        ls -R
-        echo "\nContenido de frontend:"
-        ls -la frontend/
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Usar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas (ng test)
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+      - name: Construir aplicación (ng build)
+        run: npm run build -- --configuration production
