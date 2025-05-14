@@ -9,13 +9,13 @@
 
 /* Estilo para inputs enfocados */
 .form-control:focus {
-  border-color: #198754;
+  border-color:#0d6efd;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
 /* Efecto hover en el botón */
 .btn-success:hover {
-  background-color: #157347;
+  background-color: #0d6efd;
   transform: scale(1.02);
   transition: all 0.2s;
 }

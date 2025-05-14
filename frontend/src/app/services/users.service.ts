@@ -31,6 +31,7 @@ export interface UpdateUserDto {
   telefono: string;
   email: string;
   activo: boolean;
+  passwordHash: string;
 }
 
 @Injectable({

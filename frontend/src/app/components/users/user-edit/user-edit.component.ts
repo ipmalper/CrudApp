@@ -28,7 +28,8 @@ userId!: number;
           apellidoMaterno: data.apellidoMaterno,
           telefono: data.telefono,
           email: data.email,
-          activo: data.activo
+          activo: data.activo,
+          passwordHash: data.passwordHash
         };
       },
       error: err => console.error(err)
