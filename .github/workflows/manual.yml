@@ -7,7 +7,7 @@ on:
   
     push: 
       branches: [ "main"]
-      paths: [ 'frontend/**' ]
+      
       
 
 jobs:
@@ -18,5 +18,9 @@ jobs:
    
     steps:
     - uses: actions/checkout@v4.2.2
-    - name: mi directorio
-      run: ls -la
+    - name: Verificar estructura
+      run: |
+        echo "Estructura del repositorio:"
+        ls -R
+        echo "\nContenido de frontend:"
+        ls -la frontend/
