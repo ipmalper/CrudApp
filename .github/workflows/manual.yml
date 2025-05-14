@@ -1,0 +1,21 @@
+# This is a basic workflow that is manually triggered
+
+name: CI/CD frontend
+
+
+on:
+  
+    push: 
+      branches: [ "main"]
+      
+
+jobs:
+  CI:
+
+    runs-on: ubuntu-latest
+
+   
+    steps:
+    - uses: actions/checkout@v4.2.2
+    - name: mi directorio
+      run: ls -la
