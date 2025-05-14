@@ -1,0 +1,26 @@
+/* Efecto al pasar el mouse sobre la tarjeta */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Estilo para inputs enfocados */
+.form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* Efecto hover en el botón */
+.btn-success:hover {
+  background-color: #157347;
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+
+/* Estilo para mensajes de error */
+.text-danger small {
+  font-size: 0.85rem;
+}

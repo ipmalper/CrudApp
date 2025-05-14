@@ -1,0 +1,23 @@
+/* Efecto hover en el card */
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Estilo para inputs enfocados */
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Botón con efecto hover */
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+
+/* Estilo para enlaces */
+a:hover {
+  color: #0d6efd !important;
+}

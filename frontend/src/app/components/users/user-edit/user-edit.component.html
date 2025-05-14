@@ -1,0 +1,50 @@
+<div class="container mt-4" *ngIf="user">
+  <h2 class="mb-4">Editar Cliente</h2>
+
+  <form (ngSubmit)="submit()" #form="ngForm">
+    <!-- Campo oculto para el ID -->
+    <input type="hidden" [(ngModel)]="user.userId" name="userId" />
+
+    <div class="mb-3">
+      <label for="nombres" class="form-label">Nombres</label>
+      <input type="text" class="form-control" id="nombres" name="nombres" [(ngModel)]="user.nombres" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+      <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" [(ngModel)]="user.apellidoPaterno" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+      <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" [(ngModel)]="user.apellidoMaterno" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="user.telefono" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required>
+    </div>
+
+    <!-- Este campo estaba en Razor pero no aparece en tu DTO. Si lo quieres incluir, debes agregarlo también en UpdateUserDto -->
+    <!--
+    <div class="mb-3">
+      <label for="passwordHash" class="form-label">Contraseña</label>
+      <input type="text" class="form-control" id="passwordHash" name="passwordHash" [(ngModel)]="user.passwordHash">
+    </div>
+    -->
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid">Guardar Cambios</button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-warning w-100" (click)="router.navigate(['/users'])">Volver a la lista</button>
+      </div>
+    </div>
+  </form>
+</div>
