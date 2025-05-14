@@ -24,7 +24,7 @@ namespace CrudApplication.Helpers
 
                 if (refreshToken == null || refreshToken.Revoked || refreshToken.ExpiresAt < DateTime.Now)
                 {
-                    context.Session.Clear(); // Limpia la sesión
+                    context.Session.Clear(); 
                     context.Response.StatusCode = 401;
                     await context.Response.WriteAsync("Sesión expirada o token inválido.");
                     return;

@@ -17,7 +17,7 @@ namespace CrudApplication.Controllers
 
         
 
-        // POST: /Account/Register
+        
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterDto register)
         {
@@ -33,7 +33,7 @@ namespace CrudApplication.Controllers
         }
 
        
-        // POST: /Account/Login
+        
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDto login)
         {

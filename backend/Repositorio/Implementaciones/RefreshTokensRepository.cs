@@ -32,8 +32,8 @@ namespace CrudApplication.Repositorio.Implementaciones
 
                 if (refreshTokens != null && BCrypt.Net.BCrypt.Verify(password, refreshTokens.Password))
                 {    
-                    refreshTokens.Token = Guid.NewGuid().ToString(); // Token aleatorio
-                    refreshTokens.ExpiresAt = DateTime.Now.AddMinutes(30); // Caduca en 30 min
+                    refreshTokens.Token = Guid.NewGuid().ToString(); 
+                    refreshTokens.ExpiresAt = DateTime.Now.AddMinutes(30); 
 
                     db.Execute("UPDATE RefreshTokens SET Token = @Token, ExpiresAt = @ExpiresAt WHERE Id = @Id",
                         new { refreshTokens.Token, refreshTokens.ExpiresAt, refreshTokens.Id });
